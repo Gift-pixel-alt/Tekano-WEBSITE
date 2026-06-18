@@ -56,3 +56,34 @@ if (name === "") {
 darkBtn.addEventListener("click", function () {
   document.body.classList.toggle("dark-mode");
 });
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+  
+    let valid = true;
+  
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+  
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+  
+    if (name === "") {
+      document.getElementById("nameError").textContent = "Name is required";
+      valid = false;
+    }
+  
+    if (email === "") {
+      document.getElementById("emailError").textContent = "Email is required";
+      valid = false;
+    }
+  
+    if (valid) {
+      alert("Form submitted successfully!");
+      this.reset();
+    }
+  });
+
+  document.getElementById("darkModeBtn").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
