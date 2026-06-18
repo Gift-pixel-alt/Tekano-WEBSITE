@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enquiry | Tekano Eats</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Tekano Eats - Order delicious affordable meals online quickly and easily.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tekano Eats">
+  <meta name="description" content="Order food online with Tekano Eats - fast delivery and affordable meals.">
+  <meta name="keywords" content="food delivery, online ordering, burgers, kota, meals">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <h1 class="logo">Tekano Eats</h1>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="products.html">Menu</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="content">
+    <h2>Customer Enquiry</h2>
+
+    <form id="enquiryForm">
+
+        <label>Full Name</label>
+        <input type="text" id="name" required>
+        <span class="error" id="nameError"></span>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+       <span class="error" id="emailError"></span>
+
+        <label>Order Type</label>
+        <select id="orderType" required>
+          <option value="">Select option</option>
+          <option value="delivery">Delivery</option>
+          <option value="pickup">Pickup</option>
+        </select>
+      
+        <label>Message</label>
+        <textarea id="message" required></textarea>
+      
+        <button type="submit">Submit Enquiry</button>
+      
+      </form>
+
+      <p id="formMessage"></p>
+
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Tekano Eats</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
