@@ -42,10 +42,12 @@
 
         <label>Name</label>
         <input type="text" id="cname" required>
-      
+        <span class="error" id="nameError"></span>
+
         <label>Email</label>
         <input type="email" id="cemail" required>
-      
+      <span class="error" id="emailError"></span>
+
         <label>Message Type</label>
         <select required>
           <option>General</option>
@@ -56,7 +58,7 @@
         <label>Message</label>
         <textarea id="cmessage" required></textarea>
       
-        <button type="submit">Send Message</button>
+        <button type="submit">Send</button>
       
       </form>
   </section>
