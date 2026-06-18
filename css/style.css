@@ -228,16 +228,16 @@
 
   .dark-mode {
     background-color: #121212;
-    color: white;
+    color: #ffffff;
   }
   
   .dark-mode nav {
-    background-color: #000;
+    background-color: #1f1f1f;
   }
   
-  .dark-mode .menu-item {
-    background-color: #1e1e1e;
-    color: white;
+  #darkModeBtn {
+    padding: 8px 12px;
+    cursor: pointer;
   }
 
   nav {
@@ -251,4 +251,17 @@
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .menu-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
   }
