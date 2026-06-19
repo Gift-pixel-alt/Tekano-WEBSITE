@@ -14,7 +14,7 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f6f6f6;
-    color: #333;
+    color: #242424;
   }
   
   /* =========================
@@ -264,4 +264,242 @@
     padding: 15px;
     text-align: center;
     border-radius: 8px;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .menu-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .menu-item button {
+    margin-top: 10px;
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  #cartItems li {
+    margin-bottom: 6px;
+  }
+
+  /* CART ICON (TOP RIGHT) */
+#cartIcon {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  
+  /* CART COUNT BADGE */
+  #cartCount {
+    background: red;
+    padding: 2px 7px;
+    border-radius: 50%;
+    margin-left: 5px;
+  }
+  
+  /* CART BOX */
+  #cartBox {
+    position: fixed;
+    top: 70px;
+    right: 15px;
+    width: 260px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    display: none;
+    z-index: 999;
+  }
+  
+  #cartBox ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #cartBox li {
+    margin-bottom: 5px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+  }
+  
+  /* CART CONTAINER */
+  #cartItems {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  /* CART ITEMS */
+  #cartItems li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  
+  /* TITLE */
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #222;
+  }
+  
+  /* TOTAL BOX */
+  h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 20px;
+    color: #111;
+  }
+  
+  /* BUTTONS */
+  button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  /* CHECKOUT BUTTON */
+  button:nth-of-type(1) {
+    background: #28a745;
+    color: white;
+  }
+  
+  /* CLEAR BUTTON */
+  button:nth-of-type(2) {
+    background: #dc3545;
+    color: white;
+  }
+  
+  /* BACK BUTTON */
+  button:nth-of-type(3) {
+    background: #333;
+    color: white;
+  }
+  
+  /* HOVER EFFECT */
+  button:hover {
+    opacity: 0.85;
+  }
+
+  #cartItems li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin: 10px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  #cartItems button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+  }
+  
+  #cartItems button:hover {
+    background: #555;
+  }
+
+  @media (max-width: 768px) {
+    .menu-grid {
+      display: block;
+    }
+  
+    #cartItems li {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    input {
+      width: 90%;
+      display: block;
+      margin: 10px auto;
+    }
+  
+    button {
+      width: 90%;
+    }
+  }
+
+  body {
+    font-family: Arial;
+    background: #f8f8f8;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  .menu-item {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #a50303;
+    padding: 15px 20px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .navbar a:hover {
+    color: #ffcc00;
+  }
+  
+  /* CART INSIDE NAVBAR */
+  #cartNav {
+    color: white;
+    background: #ff3b3b;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  #cartNav:hover {
+    background: #e60000;
   }
