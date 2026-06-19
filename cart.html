@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart - Tekano Eats</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <h1>Your Cart 🛒</h1>
+
+  <ul id="cartItems"></ul>
+
+  <h3>Total: R<span id="cartTotal">0</span></h3>
+
+  <h2>Checkout Details</h2>
+
+<input type="text" id="customerName" placeholder="Full Name" required>
+<input type="text" id="customerAddress" placeholder="Delivery Address" required>
+<input type="tel" id="customerPhone" placeholder="Phone Number" required>
+
+<button onclick="placeOrder()">Place Order</button>
+
+  <button onclick="checkout()">Checkout</button>
+  <button onclick="clearCart()">Clear Cart</button>
+
+  <br><br>
+  <button onclick="goToMenu()">Back to Menu</button>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
