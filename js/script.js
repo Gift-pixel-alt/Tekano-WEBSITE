@@ -1,4 +1,5 @@
-console.log("SCRIPT LOADED");
+console.log("Tekano Eats loaded");
+
 
 let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
