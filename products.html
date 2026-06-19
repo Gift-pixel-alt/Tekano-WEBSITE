@@ -21,9 +21,19 @@
       <li><a href="products.html">Menu</a></li>
       <li><a href="enquiry.html">Enquiry</a></li>
       <li><a href="contact.html">Contact</a></li>
+
+      <!-- CART ICON -->
+<div id="cartNav" onclick="goToCart()">
+    🛒 Cart <span id="cartCount">0</span>
+  </div>
+
     </ul>
   </nav>
 </header>
+
+
+  
+ 
 
 <main>
   <section class="content">
@@ -33,28 +43,31 @@
 
     <div class="menu-grid">
 
-    <div class="menu-item">
-        <img src="images/burger.jpg" alt="Chicken Burger meal">
-      <h3>Chicken Burger</h3>
-      <strong>R55</strong>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="menu-item">
-        <img src="images/kota.jpg" alt="Beef Kota meal">
-      <h3>Beef Kota</h3>
-      <strong>R45</strong>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="menu-item">
-        <img src="images/wrap.jpg" alt="Vegetarian Wrap meal">
-      <h3>Vegetarian Wrap</h3>
-      <strong>R40</strong>
-      <button>Add to Cart</button>
-    </div>
+        <div class="menu-item">
+            <img src="images/burger.jpg" alt="Chicken Burger" onclick="openLightbox(this)">
+            <h3>Chicken Burger</h3>
+            <strong>R55</strong><br>
+            <button onclick="addToCart('Chicken Burger', 55)">Add to Cart</button>
+          </div>
+      
+          <div class="menu-item">
+            <img src="images/kota.jpg" alt="Beef Kota" onclick="openLightbox(this)">
+            <h3>Beef Kota</h3>
+            <strong>R45</strong><br>
+            <button onclick="addToCart('Beef Kota', 45)">Add to Cart</button>
+          </div>
+      
+          <div class="menu-item">
+            <img src="images/wrap.jpg" alt="Vegetarian Wrap" onclick="openLightbox(this)">
+            <h3>Vegetarian Wrap</h3>
+            <strong>R40</strong><br>
+            <button onclick="addToCart('Vegetarian Wrap', 40)">Add to Cart</button>
+          </div>
+      
     </div>
   </section>
+
+  
 </main>
 
 <footer>
