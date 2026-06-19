@@ -1,89 +1,196 @@
-console.log("Tekano Eats website loaded successfully");
+console.log("SCRIPT LOADED");
 
-document.addEventListener("DOMContentLoaded", function () {
+let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
-    const form = document.getElementById("enquiryForm");
-  
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-  
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let message = document.getElementById("message").value;
-  
-        if (name === "" || email === "" || message === "") {
-          alert("Please fill in all fields.");
-        } else {
-          alert("Thank you " + name + ", your enquiry has been received!");
-          form.reset();
-        }
-      });
-    }
-  
-  });
+// ================= CART =================
 
-  const messageBox = document.getElementById("formMessage");
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  messageBox.style.color = "green";
-  messageBox.textContent = "✅ Order received! We will contact you shortly.";
-
-  form.reset();
-});
-
-  const contactForm = document.getElementById("contactForm");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let name = document.getElementById("cname").value;
-
-    alert("Message sent successfully. We will contact you soon, " + name + ".");
-    contactForm.reset();
-  });
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-if (name === "") {
-    document.getElementById("nameError").textContent = "Name is required";
+function addToCart(name, price) {
+  if (cart[name]) {
+    cart[name].qty++;
+  } else {
+    cart[name] = { price: price, qty: 1 };
   }
 
-  const darkBtn = document.getElementById("darkModeBtn");
+  saveCart();
+  updateCartCount();
+}
 
-darkBtn.addEventListener("click", function () {
-  document.body.classList.toggle("dark-mode");
+function updateCartCount() {
+  let count = 0;
+
+  for (let item in cart) {
+    count += cart[item].qty;
+  }
+
+  const el = document.getElementById("cartCount");
+  if (el) el.textContent = count;
+}
+
+function goToCart() {
+  window.location.href = "cart.html";
+}
+
+function goToMenu() {
+    window.location.href = "products.html"; // or index.html if menu is there
+  }
+
+  function loadCartPage() {
+    const list = document.getElementById("cartItems");
+    const totalEl = document.getElementById("cartTotal");
+  
+    if (!list || !totalEl) return;
+  
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+  
+    list.innerHTML = "";
+  
+    let total = 0;
+  
+    for (let item in cart) {
+      let row = document.createElement("li");
+  
+      row.innerHTML = `
+        <span>${item}</span>
+        
+        <div>
+          <button onclick="decreaseItem('${item}')">-</button>
+          <span> ${cart[item].qty} </span>
+          <button onclick="increaseItem('${item}')">+</button>
+        </div>
+  
+        <strong>R${cart[item].price * cart[item].qty}</strong>
+      `;
+  
+      list.appendChild(row);
+  
+      total += cart[item].price * cart[item].qty;
+    }
+  
+    totalEl.textContent = total;
+  }
+
+function clearCart() {
+  cart = {};
+  saveCart();
+  updateCartCount();
+
+  const list = document.getElementById("cartItems");
+  if (list) list.innerHTML = "";
+
+  const totalEl = document.getElementById("cartTotal");
+  if (totalEl) totalEl.textContent = "0";
+}
+
+function checkout() {
+  if (Object.keys(cart).length === 0) {
+    alert("Cart is empty!");
+    return;
+  }
+
+  alert("Order placed successfully!");
+  clearCart();
+}
+
+function increaseItem(name) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+  
+    cart[name].qty++;
+  
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCartPage();
+    updateCartCount();
+  }
+  
+  function decreaseItem(name) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+  
+    cart[name].qty--;
+  
+    if (cart[name].qty <= 0) {
+      delete cart[name];
+    }
+  
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCartPage();
+    updateCartCount();
+  }
+
+// ================= SAFE PAGE LOAD =================
+
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
+
+  if (document.getElementById("cartItems")) {
+    loadCartPage();
+  }
+
+  // DARK MODE SAFE
+  const darkBtn = document.getElementById("darkModeBtn");
+  if (darkBtn) {
+    darkBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  }
+
+  // ENQUIRY FORM SAFE
+  const enquiryForm = document.getElementById("enquiryForm");
+  if (enquiryForm) {
+    enquiryForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you, enquiry received!");
+      this.reset();
+    });
+  }
+
+  // CONTACT FORM SAFE
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Message sent successfully!");
+      this.reset();
+    });
+  }
 });
 
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-  
-    let valid = true;
-  
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-  
-    document.getElementById("nameError").textContent = "";
-    document.getElementById("emailError").textContent = "";
-  
-    if (name === "") {
-      document.getElementById("nameError").textContent = "Name is required";
-      valid = false;
-    }
-  
-    if (email === "") {
-      document.getElementById("emailError").textContent = "Email is required";
-      valid = false;
-    }
-  
-    if (valid) {
-      alert("Form submitted successfully!");
-      this.reset();
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById("cartItems")) {
+      loadCartPage();
     }
   });
 
-  document.getElementById("darkModeBtn").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-  });
+  function placeOrder() {
+    const name = document.getElementById("customerName").value;
+    const address = document.getElementById("customerAddress").value;
+    const phone = document.getElementById("customerPhone").value;
+  
+    if (!name || !address || !phone) {
+      alert("Please fill in all details!");
+      return;
+    }
+  
+    // Save order
+    localStorage.setItem("orderName", name);
+    localStorage.setItem("orderTotal", calculateTotal());
+  
+    // Clear cart
+    localStorage.removeItem("cart");
+  
+    // Redirect
+    window.location.href = "success.html";
+  }
+  
+  function calculateTotal() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || {};
+    let total = 0;
+  
+    for (let item in cart) {
+      total += cart[item].price * cart[item].qty;
+    }
+  
+    return total;
+  }
