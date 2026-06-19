@@ -1,100 +1,93 @@
-#  Tekano Eats - Online Food Ordering Website
+#  Tekano Eats – Online Food Ordering Website
+##  Student Information
+
+- Name: Malebana Golekane
+- Student Number: 10499855
+- Course: Software Development
+- Campus: Polokwane 
+- Year  : 2026
 
 ##  Project Overview
-
-Tekano Eats is a fictional online food ordering platform designed to allow users to browse meals and place food orders through a simple, user-friendly website. The system aims to simulate a real-world food delivery service similar to modern platforms such as Uber Eats.
-
-This project was developed as part of a web development assignment focusing on HTML, CSS, and website structure design.
+Tekano Eats is a responsive online food ordering website developed as part of a web development project. The platform allows users to browse a menu, add items to a cart, and simulate a checkout process. The goal is to provide a simple, user-friendly interface similar to modern food delivery platforms like Uber Eats and KFC online ordering systems.
 
 ---
 
-## 👨 Student Information
-
-- **Name:** [Your Full Name]
-- **Student Number:** [Your Student Number]
-- **Course:** Web Development / Introduction to Web Technologies
-- **Institution:** The Independent Institute of Education (IIE)
-- **Year:** 2026
-
----
-
-##  Organisation Name
-
-**Tekano Eats**
-
-Tekano Eats is a fictional small online food ordering business that provides affordable and convenient meal options for students, families, and working professionals.
+##  Project Objectives
+- Create a fully functional multi-page website
+- Implement a dynamic shopping cart system
+- Provide a clean and responsive user interface
+- Improve user experience through interactive JavaScript features
+- Apply SEO best practices and form validation
+- Deploy the website using GitHub Pages
 
 ---
 
-##  Website Goals and Objectives
+##  Organisation Overview
+**Name:** Tekano Eats  
+**Type:** Online Food Ordering Platform  
 
-The main goals of this website are:
+Tekano Eats is a fictional business designed to simulate a real-world food delivery service. It focuses on providing affordable meals with fast and easy online ordering for students, workers, and local customers.
 
-- Provide an easy-to-use online food ordering interface
-- Display available meals and prices clearly
-- Improve customer accessibility to food services
-- Simulate a real-world online ordering system
-
-###  Key Performance Indicators (KPIs)
-
-- Number of website visitors
-- Number of enquiries submitted
-- Menu engagement (page visits)
-- User navigation efficiency
-
----
-
-##  Website Pages
-
-The website consists of the following pages:
-
-###  Home Page (index.html)
-- Introduction to Tekano Eats
-- Hero section with call-to-action button
-
-### ℹ️ About Page (about.html)
-- Information about the business
-- Mission and vision
-
-###  Menu Page (products.html)
-- List of available meals
-- Prices and descriptions
-
-###  Enquiry Page (enquiry.html)
-- Contact form for customer questions or special requests
-
-###  Contact Page (contact.html)
-- Contact details and location information
+**Target Audience:**
+- Students
+- Working professionals
+- Local community customers
 
 ---
 
 ##  Website Features
-
-- Responsive navigation menu across all pages
-- Clean and user-friendly layout
-- Simple enquiry form
-- Consistent branding and color scheme
-- Mobile-friendly structure (basic responsive design)
+- Home page with branding and introduction
+- Menu page with food items and prices
+- Add to cart functionality
+- Dynamic cart system with quantity updates
+- Checkout simulation page
+- Contact and enquiry forms
+- Responsive mobile-friendly design
+- Dark mode feature (UI enhancement)
+- Search filter for menu items
 
 ---
 
 ##  Technologies Used
+- HTML5 (Structure)
+- CSS3 (Styling & Responsive Design)
+- JavaScript (Functionality & Interactivity)
+- LocalStorage (Cart persistence)
+- GitHub Pages (Deployment)
 
-- HTML5 (Website structure)
-- CSS3 (Styling and layout design)
-- JavaScript (reserved for future enhancements)
-- GitHub (version control and hosting)
+---
+
+##  Key Functionality Implemented
+
+###  Shopping Cart System
+- Add/remove items
+- Quantity increase/decrease
+- Automatic total calculation
+- Persistent storage using LocalStorage
+
+###  Search Feature
+- Users can search menu items dynamically
+
+###  Dark Mode
+- Toggle between light and dark themes
+
+###  Responsive Design
+- Mobile, tablet, and desktop compatibility
 
 ---
 
 ##  File Structure
-Tekano-Eats/
+
+
+Tekano WEBSITE/
 │
 ├── index.html
 ├── about.html
 ├── products.html
-├── enquiry.html
 ├── contact.html
+├── enquiry.html
+├── cart.html
+├── success.html
 │
 ├── css/
 │ └── style.css
@@ -102,63 +95,76 @@ Tekano-Eats/
 ├── js/
 │ └── script.js
 │
-└── images/
+├── images/
+│ ├── burger.jpg
+│ ├── kota.jpg
+│ ├── wrap.jpg
+│
+└── README.md
 
 
 ---
 
-##  Sitemap
+##  Deployment
+The website is deployed using **GitHub Pages**.
 
-
-Home
-├── About
-├── Menu
-├── Enquiry
-└── Contact
-
+**Live Website Link:**  
+> https://gift-pixel-alt.github.io/Tekano-WEBSITE/
 
 ---
 
-##  Future Improvements
+##  Changelog
 
-- Add user login and registration system
-- Implement real online ordering system
-- Add shopping cart functionality
-- Connect to a backend database
-- Improve mobile responsiveness
-- Add payment gateway simulation
+### Version 1.0 – Part 1 (Planning)
+- Created project proposal
+- Defined organisation and target audience
+- Planned website structure and goals
+
+### Version 2.0 – Part 2 (Design & CSS)
+- Added external CSS stylesheet
+- Improved layout using Flexbox
+- Implemented responsive design (mobile support)
+- Styled navigation bar and menu cards
+- Improved UI design consistency
+
+### Version 3.0 – Part 3 (Functionality & SEO)
+- Added JavaScript shopping cart system
+- Implemented LocalStorage for cart saving
+- Added add/remove quantity functionality
+- Created checkout and success page
+- Added search filter for menu items
+- Implemented dark mode feature
+- Improved form validation
+- Added responsive improvements and UI polish
 
 ---
 
-##  References
-
-- W3Schools: https://www.w3schools.com/
-- MDN Web Docs: https://developer.mozilla.org/
-- Lecturer provided assignment brief (IIE LMS)
+##  SEO Implementation
+- Proper heading structure (H1, H2, H3)
+- Image alt attributes included
+- Clean and descriptive page titles
+- Internal navigation links between pages
+- Mobile-friendly responsive layout
 
 ---
 
-## Declaration
+##  Forms
+- Contact form with validation
+- Enquiry form with input checks
+- Error handling using JavaScript
+- User feedback messages after submission
 
-This project is an original student-developed website created for educational purposes
+---
 
-##  Part 2 Changelog
+## References
+- MDN Web Docs (https://developer.mozilla.org/)
+- W3Schools (https://www.w3schools.com/)
+- Lecture notes and LMS material (The IIE)
+- YouTube tutorials on HTML, CSS, and JavaScript
+- GitHub Pages Documentation (https://pages.github.com/)
 
-### CSS Improvements
-- Added CSS reset for consistent styling across browsers
-- Improved typography using better font sizing and spacing
-- Implemented Flexbox for navigation layout
-- Enhanced menu items using card-style design
-- Added hover effects for interactive elements
+---
 
-### Responsive Design
-- Added media queries for tablet and mobile devices
-- Improved navigation layout for smaller screens
-- Adjusted font sizes and spacing for mobile usability
-- Ensured all pages adapt to different screen sizes
 
-### UI/UX Improvements
-- Improved visual hierarchy for better readability
-- Added shadows and spacing for modern design appearance
-- Enhanced overall user experience and navigation flow
+
 
